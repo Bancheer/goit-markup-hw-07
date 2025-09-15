@@ -57,8 +57,53 @@
             >
           </li>
         </ul>
+
+        <!-- ADD: Burger button (mobile only) -->
+        <button
+          class="burger"
+          id="burger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="burger__bar" aria-hidden="true"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
       </div>
     </header>
+
+    <!-- ADD: Mobile menu overlay -->
+    <div class="mmenu" id="mobile-menu" hidden>
+      <div
+        class="mmenu__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mmenu-title"
+      >
+        <div class="mmenu__head">
+          <h2 id="mmenu-title" class="visually-hidden">Mobile menu</h2>
+          <button class="mmenu__close" data-close aria-label="Close">✕</button>
+        </div>
+        <nav class="mmenu__nav" aria-label="Mobile navigation">
+          <a class="mmenu__link" href="./index.html">Studio</a>
+          <a class="mmenu__link" href="./portfolio.html">Portfolio</a>
+          <a class="mmenu__link" href="#contacts">Contacts</a>
+        </nav>
+        <div class="mmenu__contacts">
+          <a class="mmenu__tel" href="tel:+110001111111">+11 (000) 111-11-11</a>
+          <a class="mmenu__mail" href="mailto:info@devstudio.com"
+            >info@devstudio.com</a
+          >
+          <ul class="mmenu__socials">
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Twitter">Twitter</a></li>
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mmenu__backdrop" data-close aria-hidden="true"></div>
+    </div>
 
     <main id="studio">
       <!-- Hero -->
@@ -585,6 +630,9 @@
         </form>
       </div>
     </div>
+
+    <!-- ADD: Mobile menu script (separate file) -->
+    <script src="./js/mobile-menu.js" defer></script>
 
     <!-- Modal script -->
     <script>

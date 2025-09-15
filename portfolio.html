@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WEBSTUDIO — Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- modern-normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4g4VZqZt2T7bX0A/yX6r8vJY0XrYO8pRHa3aOFRpQYk0i9B8L0CF7qH9vQG9bQih1m0u1t2vQJk8e7VqP0hK0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__wrap">
+        <a class="logo link" href="./index.html"><span>WEB</span>STUDIO</a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list list">
+            <li>
+              <a class="nav__link link" href="./index.html">Studio</a>
+            </li>
+            <li>
+              <a
+                class="nav__link link current"
+                href="./portfolio.html"
+                aria-current="page"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a class="nav__link link" href="./index.html#contacts"
+                >Contacts</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <ul class="contacts list">
+          <li>
+            <a class="contacts__link link" href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+          <li>
+            <a class="contacts__link link" href="tel:+110001111111"
+              >+11 (000) 111-11-11</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="portfolio">
+      <section class="section">
+        <div class="container">
+          <h1 class="visually-hidden">Portfolio</h1>
+
+          <!-- Filters -->
+          <ul class="filters list" role="tablist" aria-label="Project filters">
+            <li>
+              <button
+                type="button"
+                class="btn filter is-active"
+                role="tab"
+                aria-selected="true"
+              >
+                All
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn filter" role="tab">
+                Web Site
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn filter" role="tab">App</button>
+            </li>
+            <li>
+              <button type="button" class="btn filter" role="tab">
+                Design
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn filter" role="tab">
+                Marketing
+              </button>
+            </li>
+          </ul>
+
+          <!-- Projects grid -->
+          <ul class="projects list">
+            <!-- 1 -->
+            <li class="project-card">
+              <a
+                class="project-link"
+                href="#"
+                aria-label="Open Banking App Interface Concept project"
+              >
+                <div class="thumb">
+                  <img
+                    src="./images/banking-app.jpg"
+                    alt="Screens of a banking app interface"
+                    width="360"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="project-overlay">
+                    <p>
+                      14 screens of onboarding, accounts, and payments with
+                      accent color palette and clean typography. Built with
+                      component-based design.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">
+                    Banking App Interface Concept
+                  </h3>
+                  <p class="project-card__tag">App</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 2 -->
+            <li class="project-card">
+              <a
+                class="project-link"
+                href="#"
+                aria-label="Open Cashless Payment project"
+              >
+                <div class="thumb">
+                  <img
+                    src="./images/cashless-payment.jpg"
+                    alt="Contactless payment with smartphone"
+                    width="360"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="project-overlay">
+                    <p>
+                      Case study of a cashless checkout flow: NFC, QR, and
+                      tokenization. Conversion uplift +18% on A/B.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Cashless Payment</h3>
+                  <p class="project-card__tag">Marketing</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 3 -->
+            <li class="project-card">
+              <a
+                class="project-link"
+                href="#"
+                aria-label="Open Meditation App project"
+              >
+                <div class="thumb">
+                  <img
+                    src="./images/meditation-app.jpg"
+                    alt="Meditation app on a smartphone"
+                    width="360"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="project-overlay">
+                    <p>
+                      Calm UI with session tracking, breathing coach and
+                      streaks. Custom audio engine and offline mode.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Meditation App</h3>
+                  <p class="project-card__tag">App</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 4 -->
+            <li class="project-card">
+              <a
+                class="project-link"
+                href="#"
+                aria-label="Open Taxi Service project"
+              >
+                <div class="thumb">
+                  <img
+                    src="./images/taxi-service.jpg"
+                    alt="Hand ordering a taxi in a phone app"
+                    width="360"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="project-overlay">
+                    <p>
+                      Promotion assets for a city taxi service: OOH, SMM
+                      creatives, landing with dynamic pricing widget.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Taxi Service</h3>
+                  <p class="project-card__tag">Marketing</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 5 -->
+            <li class="project-card">
+              <a
+                class="project-link"
+                href="#"
+                aria-label="Open Screen Illustrations project"
+              >
+                <div class="thumb">
+                  <img
+                    src="./images/screen-illustrations.jpg"
+                    alt="Abstract gradient illustrations on screens"
+                    width="360"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="project-overlay">
+                    <p>
+                      Set of 24 vector illustrations for onboarding and empty
+                      states. Fully customizable in Figma.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Screen Illustrations</h3>
+                  <p class="project-card__tag">Design</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 6 -->
+            <li class="project-card">
+              <a
+                class="project-link"
+                href="#"
+                aria-label="Open Online Courses project"
+              >
+                <div class="thumb">
+                  <img
+                    src="./images/online-courses.jpg"
+                    alt="Girl with laptop studying online"
+                    width="360"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="project-overlay">
+                    <p>
+                      Marketing site for a course platform with catalog filters,
+                      testimonials, and lead capture.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Online Courses</h3>
+                  <p class="project-card__tag">Marketing</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 7 -->
+            <li class="project-card">
+              <a
+                class="project-link"
+                href="#"
+                aria-label="Open Instagram Stories Concept project"
+              >
+                <div class="thumb">
+                  <img
+                    src="./images/instagram-stories.jpg"
+                    alt="Layouts of Instagram stories on phone"
+                    width="360"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="project-overlay">
+                    <p>
+                      30 editable story templates with modular grid and safe
+                      areas. Export presets for PNG/MP4.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Instagram Stories Concept</h3>
+                  <p class="project-card__tag">Design</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 8 -->
+            <li class="project-card">
+              <a
+                class="project-link"
+                href="#"
+                aria-label="Open Organic Food project"
+              >
+                <div class="thumb">
+                  <img
+                    src="./images/organic-food.jpg"
+                    alt="Paper bag with organic vegetables"
+                    width="360"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="project-overlay">
+                    <p>
+                      Landing for an eco grocery with subscription bundles,
+                      recipe cards, and delivery scheduler.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Organic Food</h3>
+                  <p class="project-card__tag">Web Site</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 9 -->
+            <li class="project-card">
+              <a
+                class="project-link"
+                href="#"
+                aria-label="Open Fresh Coffee project"
+              >
+                <div class="thumb">
+                  <img
+                    src="./images/fresh-coffee.jpg"
+                    alt="Cup of freshly brewed coffee on table"
+                    width="360"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="project-overlay">
+                    <p>
+                      Small e-commerce for a coffee roastery: product filters,
+                      cart drawer, Apple Pay &amp; Google Pay.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Fresh Coffee</h3>
+                  <p class="project-card__tag">Web Site</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacts">
+      <div class="container">
+        <div class="footer__wrap">
+          <!-- Left -->
+          <div class="footer__info">
+            <a class="logo link footer__logo" href="./index.html"
+              ><span>WEB</span>STUDIO</a
+            >
+            <p class="footer__text">
+              Increase the flow of customers and sales for your business with
+              digital marketing &amp; growth solutions.
+            </p>
+          </div>
+
+          <!-- Right -->
+          <div class="footer__socials">
+            <p class="footer__social-title">Social media</p>
+            <ul class="footer-social list" aria-label="Social media links">
+              <li>
+                <a
+                  class="social__link footer-social__link"
+                  href="#"
+                  aria-label="Instagram"
+                >
+                  <svg class="icon" width="48" height="48">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="social__link footer-social__link"
+                  href="#"
+                  aria-label="Twitter"
+                >
+                  <svg class="icon" width="48" height="48">
+                    <use href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="social__link footer-social__link"
+                  href="#"
+                  aria-label="Facebook"
+                >
+                  <svg class="icon" width="48" height="48">
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="social__link footer-social__link"
+                  href="#"
+                  aria-label="LinkedIn"
+                >
+                  <svg class="icon" width="48" height="48">
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__subscribe">
+            <p class="footer__social-title">Subscribe</p>
+
+            <form class="subscribe-form" name="subscribe">
+              <label class="visually-hidden" for="subscribe-email">Email</label>
+              <input
+                type="email"
+                id="subscribe-email"
+                name="email"
+                placeholder="E-mail"
+                required
+              />
+              <button class="btn subscribe-form__btn" type="submit">
+                Subscribe
+                <svg class="icon" width="24" height="24" aria-hidden="true">
+                  <use href="./images/icons.svg#icon-send"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

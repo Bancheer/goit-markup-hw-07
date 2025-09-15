@@ -1,0 +1,1152 @@
+/* ========== Reset ========== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== Variables ========== */
+:root {
+  --text: #2e2f42;
+  --muted: #434455;
+  --accent: #4d5ae5;
+  --accent-hover: #404bbf;
+  --bg: #ffffff;
+  --bg-alt: #f4f4fd;
+  --line: #e7e9fc;
+  --shadow-1: 0 1px 6px rgba(46, 47, 66, 0.08), 0 1px 1px rgba(46, 47, 66, 0.16),
+    0 2px 1px rgba(46, 47, 66, 0.08);
+  --s-8: 8px;
+  --s-12: 12px;
+  --s-16: 16px;
+  --s-24: 24px;
+  --s-32: 32px;
+  --s-40: 40px;
+  --s-48: 48px;
+  --s-72: 72px;
+  --s-100: 100px; /* у тебя так в футере */
+  --s-120: 120px;
+}
+
+/* ========== Base ========== */
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  letter-spacing: 0.02em;
+}
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/* ========== Layout ========== */
+.container {
+  width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.section {
+  padding: var(--s-120) 0;
+}
+
+/* ========== Header ========== */
+.header {
+  border-bottom: 1px solid rgba(46, 47, 66, 0.08);
+  background: #fff;
+}
+.header__wrap {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+
+.logo span,
+.logo-accent {
+  color: var(--accent);
+}
+
+.nav {
+  margin-left: 76px;
+}
+.nav__list {
+  display: flex;
+  gap: 40px;
+}
+.contacts {
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+}
+
+.nav__link {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  display: block;
+  padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contacts__link {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.link:hover,
+.link:focus {
+  color: var(--accent);
+}
+
+/* Active nav underline */
+.nav__link.current,
+.nav__link[aria-current="page"] {
+  color: var(--accent);
+  position: relative;
+}
+.nav__link.current::after,
+.nav__link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+/* ========== Hero ========== */
+.hero {
+  color: #fff;
+  text-align: center;
+
+  /* высота: сохраняем соотношение 1440:600 (2.4) и ограничиваем 600px */
+  height: min(41.6667vw, 600px); /* 600/1440 = 0.416667 = 41.6667vw */
+  display: grid;
+  place-items: center;
+
+  background-color: var(--text); /* запасной цвет */
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/hero-image.jpg"); /* подставь свой путь, если другой */
+  background-size: cover; /* как в фигме — без “письма-полос” */
+  background-position: center; /* по центру */
+  background-repeat: no-repeat;
+}
+
+/* немного “дышания” на очень узких экранах */
+@media (max-width: 600px) {
+  .hero {
+    height: 360px;
+  } /* можешь поставить 320–420 по вкусу */
+}
+
+/* контент по центру */
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-48);
+}
+.hero__title {
+  margin: 0;
+  line-height: 1.07;
+  font-size: 56px;
+}
+
+.hero__btn {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  transition: background-color 250ms ease, box-shadow 250ms ease;
+}
+.hero__btn:hover,
+.hero__btn:focus {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== Section title ========== */
+.section-title {
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  margin: 0 0 var(--s-72);
+}
+
+/* ========== Benefits ========== */
+.benefits__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-24);
+}
+.benefits__item {
+  flex: 0 0 calc((100% - 72px) / 4);
+}
+.benefits__iconbox {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  height: 112px;
+  margin-bottom: var(--s-8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.benefits__item:hover .benefits__iconbox {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.benefits__title {
+  margin-bottom: var(--s-8);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--text);
+}
+.benefits__text {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ========== “What are we doing” (index) ========== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-24);
+}
+.cards > li {
+  flex: 0 0 calc((100% - 48px) / 3);
+}
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+}
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(77, 90, 229, 0.9);
+  color: #fff;
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.work-card:hover .work-overlay,
+.work-card:focus-within .work-overlay {
+  transform: translateY(0);
+}
+
+/* ========== Team ========== */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  background-color: #f4f4fd; /* ← фон для всей секции */
+  padding: var(--s-120) 0;
+}
+.team .card {
+  flex: 0 0 264px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.team .card__body {
+  text-align: center;
+}
+.team .card__title {
+  margin: 0 0 8px; /* убираем лишний margin-top, чтобы карточка стала ниже */
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--text);
+}
+.team .card__tag {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+/* Team social */
+.social {
+  display: flex;
+  gap: var(--s-24);
+  justify-content: center;
+  margin-top: var(--s-8);
+}
+.social__link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background-color 250ms ease;
+}
+.social__link:hover,
+.social__link:focus {
+  background: var(--accent-hover);
+}
+
+/* ========== Customers ========== */
+.customers__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-24);
+  justify-content: center;
+}
+.customers__item {
+  flex: 0 0 calc((100% - 120px) / 6);
+  max-width: 168px;
+}
+.customers__link {
+  height: 88px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8e8f99;
+  border-color: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.customers__link svg [fill]:not([fill="none"]) {
+  fill: currentColor !important;
+}
+.customers__link svg [stroke]:not([stroke="none"]) {
+  stroke: currentColor !important;
+}
+
+.customers__link:hover,
+.customers__link:focus {
+  color: #404bbf; /* можно и var(--accent-hover) — это тот же цвет */
+  border-color: #404bbf;
+}
+
+.customers__link {
+  color: #8e8f99; /* цвет иконки/текста */
+  border-color: currentColor; /* рамка = текущему цвету */
+}
+
+/* чтобы логотипы подхватывали цвет */
+.customers__link svg {
+  fill: currentColor;
+}
+
+/* hover остаётся как у тебя: меняется и цвет, и рамка */
+.customers__link:hover,
+.customers__link:focus {
+  color: var(--accent);
+  border-color: currentColor;
+}
+
+/* ========== Portfolio: Filters ========== */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: var(--s-24);
+  margin-bottom: var(--s-72);
+}
+.btn {
+  font: inherit;
+}
+.filter {
+  padding: 12px 24px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg-alt);
+  color: var(--accent);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.filter:hover,
+.filter:focus,
+.filter.is-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 2px 1px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* ========== Portfolio: Grid & Cards ========== */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-24);
+}
+.project-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  background: #fff;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-card:hover,
+.project-card:focus-within {
+  box-shadow: var(--shadow-1);
+}
+
+.project-link {
+  display: block;
+}
+.thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(77, 90, 229, 0.9);
+  color: #fff;
+  padding: 40px 32px;
+  line-height: 1.5;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-link:hover .project-overlay,
+.project-link:focus .project-overlay {
+  transform: translateY(0);
+}
+
+.project-card__body {
+  padding: var(--s-32) var(--s-16);
+  border: 1px solid var(--line);
+  border-top: none;
+}
+.project-card__title {
+  margin: 0 0 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--text);
+}
+.project-card__tag {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ========== Footer ========== */
+.footer {
+  background: #2e2f42;
+  color: #f4f4fd;
+  padding: var(--s-100) 0;
+}
+.footer__wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 120px;
+}
+.footer__info {
+  max-width: 264px;
+}
+.footer__logo {
+  color: #f4f4fd;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.footer__text {
+  line-height: 1.5;
+}
+.footer__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer__social-title {
+  font-weight: 500;
+  margin-bottom: var(--s-16);
+  color: #fff;
+}
+.footer-social {
+  display: flex;
+  gap: var(--s-16);
+}
+.footer-social__link {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f4f4fd;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-social__link:hover,
+.footer-social__link:focus {
+  background: #31d0aa;
+  color: #fff;
+}
+
+/* ========== Modal ========== */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(46, 47, 66, 0.4);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: min(408px, calc(100% - 32px));
+  border-radius: 8px;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.modal-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.modal-close:hover svg {
+  fill: #fff;
+}
+
+.modal-form {
+  display: grid;
+  gap: 12px;
+}
+.field > span,
+.textarea > span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.input-wrap {
+  position: relative;
+}
+.input-wrap input {
+  width: 100%;
+  padding: 10px 38px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-wrap input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(77, 90, 229, 0.15);
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: rgba(46, 47, 66, 0.6);
+  pointer-events: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-wrap input:focus + .input-icon {
+  fill: var(--accent);
+}
+
+.textarea textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 8px 12px;
+  resize: vertical;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.textarea textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(77, 90, 229, 0.15);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  font-size: 12px;
+  color: var(--muted);
+}
+.checkmark {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  display: inline-grid;
+  place-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox input:checked + .checkmark {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.checkmark svg {
+  width: 12px;
+  height: 12px;
+  fill: #fff;
+}
+
+.btn.primary {
+  padding: 16px 32px;
+  justify-self: center;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn.primary:hover,
+.btn.primary:focus {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+/* ========== Icons & misc ========== */
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+address {
+  font-style: normal;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1199px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .customers__item {
+    flex: 0 0 calc((100% - 72px) / 4);
+  }
+  .team .card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+  .project-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 600px) {
+  .nav {
+    margin-left: 76px;
+  }
+  .nav__list,
+  .contacts {
+    gap: var(--s-40);
+  }
+  .hero {
+    padding: 120px 0;
+  }
+  .hero__title {
+    font-size: 40px;
+  }
+  .cards {
+    gap: 16px;
+  }
+  .cards > li {
+    flex-basis: 100%;
+  }
+  .team .card,
+  .project-card {
+    flex-basis: 100%;
+  }
+  .section {
+    padding: 80px 0;
+  }
+  .footer__wrap {
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url("../images/hero-image.jpg");
+  }
+}
+
+/* === OUR TEAM: фикс сетки и рамки карточек === */
+
+/* секция оставляем как фон + отступы */
+.team {
+  background-color: #f4f4fd;
+  padding: 120px 0;
+}
+
+/* СЕТКА: делаем флекс именно для списка карточек внутри team.
+   Исключаем список соц.иконок (.social), чтобы его не задеть. */
+.team .list:not(.social) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-24);
+}
+
+/* КАРТОЧКА: единый фрейм с рамкой, чтобы ширина совпадала с изображением */
+.team .card {
+  box-sizing: border-box;
+}
+
+/* картинка не «прыгает» и заполняет ширину фрейма */
+.team .card > img {
+  display: block;
+  width: 264px; /* ширина изображения как в фигме */
+  height: 260px; /* высота как в фигме */
+  object-fit: cover;
+}
+
+/* тело карточки — без собственной рамки */
+.team .card__body {
+  text-align: center;
+  padding: var(--s-32) var(--s-16);
+}
+
+/* адаптив — как у тебя было */
+@media (max-width: 900px) {
+  .team .card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 600px) {
+  .team .card {
+    flex-basis: 100%;
+  }
+}
+
+/* База: серые логотипы и рамка */
+.customers__link {
+  color: #8e8f99;
+  border-color: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ключ: прокидываем переменные, которые использует спрайт */
+.customers__link svg {
+  /* делаем обе переменные равными текущему цвету */
+  --color1: currentColor;
+  --color2: currentColor;
+}
+
+/* Ховер: заливаем #404BBF и рамку тоже */
+.customers__link:hover,
+.customers__link:focus {
+  color: #404bbf; /* при таком спрайте это и есть var(--accent-hover) */
+  border-color: #404bbf;
+}
+
+/* (необязательно) плавная анимация заливки */
+.customers__link svg [fill] {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* БАЗА: фон внутри символа скрыт, глиф берет текущий цвет ссылки */
+.footer-social__link svg {
+  --color1: transparent; /* скрыть внутренний круг из symbol */
+  --color2: currentColor; /* рисуем только «значок» */
+}
+
+/* ХОВЕР: кружок зелёный, глиф белый */
+.footer-social__link:is(:hover, :focus) {
+  background: #31d0aa;
+  color: #fff;
+}
+
+.footer-social__link:is(:hover, :focus) svg {
+  --color1: transparent; /* фон symbol остаётся скрытым */
+  --color2: #fff; /* сам значок белый */
+}
+
+/* Footer socials — базово #4D5AE5, при ховере #31D0AA, глиф всегда белый */
+.footer-social__link {
+  background: #4d5ae5; /* базовый синий фон кружка */
+  color: #fff; /* цвет глифа (через currentColor) */
+}
+
+.footer-social__link svg {
+  --color1: transparent; /* скрываем внутренний круг из symbol */
+  --color2: currentColor; /* сам значок = белый */
+}
+
+.footer-social__link:is(:hover, :focus) {
+  background: #31d0aa; /* зелёный при наведении */
+  color: #fff; /* глиф остаётся белым */
+}
+
+.footer-social__link:is(:hover, :focus) svg {
+  --color1: transparent;
+  --color2: currentColor;
+}
+
+/* Our Team socials — базово #4D5AE5, при ховере #404BBF, глиф белый */
+.team .social__link {
+  background: #4d5ae5;
+  color: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team .social__link svg {
+  /* скрываем внутренний “фон-круг” из symbol и красим только значок */
+  --color1: transparent;
+  --color2: currentColor;
+  fill: currentColor; /* на случай, если в symbol нет переменных */
+}
+
+.team .social__link:is(:hover, :focus) {
+  background: #404bbf;
+  color: #fff;
+}
+
+.team .social__link:is(:hover, :focus) svg {
+  --color1: transparent;
+  --color2: currentColor;
+}
+
+.field > span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.input-wrap {
+  position: relative;
+}
+.input-wrap input {
+  width: 100%;
+  padding: 10px 38px; /* место под иконку слева */
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-wrap input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(77, 90, 229, 0.15);
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: rgba(46, 47, 66, 0.6);
+  pointer-events: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-wrap input:focus + .input-icon {
+  fill: var(--accent);
+}
+
+.checkbox .policy-link {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox .policy-link:hover,
+.checkbox .policy-link:focus {
+  color: var(--accent-hover);
+}
+
+.backdrop {
+  background-color: rgba(46, 47, 66, 0.6); /* #2E2F42 с 60% непрозрачности */
+  /* или так: background-color: #2E2F4299;  99 = ~60% альфа */
+}
+
+/* прячем галочку по умолчанию */
+.checkbox input + .checkmark svg {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* показываем после клика */
+.checkbox input:checked + .checkmark svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* визуальное состояние квадрата */
+.checkbox input + .checkmark {
+  background: transparent;
+  border-color: rgba(46, 47, 66, 0.4);
+}
+.checkbox input:checked + .checkmark {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff; /* если галочка использует currentColor */
+}
+
+/* на всякий случай: если в другом месте стоит opacity:1 */
+.checkbox .checkmark svg {
+  will-change: opacity, transform;
+}
+
+/* Focus без тени для всех полей */
+.input-wrap input:focus,
+.textarea textarea:focus,
+.footer .subscribe-form input:focus {
+  outline: none;
+  border-color: var(--accent); /* обводка остаётся */
+  box-shadow: none; /* тень убираем */
+}
+
+/* Если не нужна тень у чекбокса при фокусе */
+.checkbox input:focus + .checkmark {
+  box-shadow: none; /* убрать «свечение» */
+  border-color: var(--accent); /* оставить подсветку рамки */
+}
+
+/* 1) Поля не вылезают из контейнера */
+.input-wrap,
+.input-wrap input,
+.textarea textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2) Подписка в футере: позволяем сжиматься и переноситься */
+.footer .subscribe-form {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.footer .subscribe-form input {
+  /* вместо жёсткой ширины — гибкая */
+  flex: 1 1 240px; /* можно менять 240 на вкус */
+  min-width: 0; /* важно для флекса, иначе переполнение */
+}
+.footer .subscribe-form .subscribe-form__btn {
+  flex: 0 0 auto;
+}
+
+/* на узких экранах — в столбик, ничего не торчит */
+@media (max-width: 600px) {
+  .footer .subscribe-form {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer .subscribe-form input {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+/* 3) Модалка: поля строго по ширине модалки */
+.modal {
+  width: min(408px, calc(100% - 32px));
+}
+.modal-form {
+  display: grid;
+  gap: 12px;
+}
+.modal .input-wrap,
+.modal .textarea {
+  width: 100%;
+}
+.modal .input-wrap input,
+.modal .textarea textarea {
+  width: 100%;
+}
+
+/* 4) Убрали свечение, оставили обводку (как просил ранее) */
+.input-wrap input:focus,
+.textarea textarea:focus,
+.footer .subscribe-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: none;
+}
+
+/* Колонка подписки во футере */
+.footer__subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Форма */
+.footer .subscribe-form {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Поле email — без «свечения», с подсветкой рамки на фокусе */
+.footer .subscribe-form input {
+  width: 264px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.footer .subscribe-form input::placeholder {
+  color: rgba(244, 244, 253, 0.6);
+}
+.footer .subscribe-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: none; /* как просил — никакой тени */
+}
+
+/* Кнопка + подсветка */
+.subscribe-form__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent); /* #4D5AE5 */
+  color: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.subscribe-form__btn:hover,
+.subscribe-form__btn:focus {
+  background: var(--accent-hover); /* #404BBF — «подсветка» */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Иконка «send» — белая внутри кнопки (на случай var(--color1/--color2) в спрайте) */
+.subscribe-form__btn .icon {
+  fill: currentColor;
+}
+.subscribe-form__btn svg {
+  --color1: #fff;
+  --color2: #fff;
+}
+
+/* Адаптив: чтобы ничего не вылезало на узких экранах */
+@media (max-width: 600px) {
+  .footer .subscribe-form {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer .subscribe-form input {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  .subscribe-form__btn {
+    flex: 0 0 auto;
+  }
+}

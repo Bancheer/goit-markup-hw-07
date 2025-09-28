@@ -1150,3 +1150,245 @@ address {
     flex: 0 0 auto;
   }
 }
+
+/* ===================================================================
+   MOBILE + TABLET ENHANCEMENTS (append-only; keeps your desktop intact)
+   Breakpoints: <768 (mobile), 768–1157 (tablet), ≥1158 (desktop)
+   =================================================================== */
+
+/* utility to lock scroll when mobile menu is open */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* ----- Mobile nav (burger + overlay) ----- */
+/* hidden by default (desktop-first) */
+.menu-toggle {
+  display: none;
+  -webkit-tap-highlight-color: transparent;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.12);
+  border-radius: 4px;
+  background: transparent;
+}
+.menu-toggle__bar {
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  display: block;
+}
+
+/* full-screen mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: none;
+  flex-direction: column;
+  padding: 80px 24px 40px;
+  z-index: 1000;
+  overflow: auto;
+}
+.mobile-menu.is-open {
+  display: flex;
+}
+.mobile-menu__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(46, 47, 66, 0.12);
+  background: #fff;
+}
+.mobile-menu__nav .menu,
+.mobile-menu .menu {
+  list-style: none;
+  margin: 0 0 40px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.mobile-menu .menu-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+.mobile-menu .menu-link:focus,
+.mobile-menu .menu-link:active {
+  color: var(--accent-hover);
+}
+
+.mobile-menu .address {
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+.mobile-menu .address-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mobile-menu .address-link {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--muted);
+}
+.mobile-menu .address-link[href^="tel:"] {
+  color: var(--accent);
+  font-size: 24px;
+}
+.mobile-menu .socials {
+  display: flex;
+  gap: 24px;
+}
+
+/* ----- Mobile (<768px) ----- */
+@media (max-width: 767.98px) {
+  .container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .section {
+    padding: 96px 0;
+  }
+
+  .header__wrap {
+    justify-content: space-between;
+  }
+  .nav__list,
+  .contacts {
+    display: none;
+  }
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .hero {
+    height: 360px;
+  }
+  .hero__title {
+    font-size: 36px;
+  }
+
+  .benefits__item {
+    flex: 0 0 100%;
+  }
+  .benefits__iconbox {
+    display: none;
+  }
+  .benefits__title {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  .cards > li {
+    flex: 0 0 100%;
+  }
+
+  .team {
+    padding: 96px 0;
+  }
+  .team .card {
+    flex-basis: 100%;
+  }
+
+  .customers__item {
+    flex: 0 0 calc((100% - 16px) / 2);
+    max-width: none;
+  }
+
+  .projects .project-card {
+    flex-basis: 100%;
+  }
+
+  .footer__wrap {
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .modal {
+    width: min(392px, calc(100% - 32px));
+  }
+}
+
+/* ----- Tablet (768–1157px) ----- */
+@media (min-width: 768px) and (max-width: 1157.98px) {
+  .container {
+    width: 768px;
+  }
+
+  .menu-toggle,
+  .mobile-menu {
+    display: none !important;
+  } /* show desktop nav */
+  .nav__list {
+    display: flex;
+  }
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .benefits__item {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+  .benefits__iconbox {
+    display: none;
+  }
+  .benefits__title {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  .cards > li {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+
+  .team .card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+  .customers__item {
+    flex: 0 0 calc((100% - 48px) / 3);
+    max-width: none;
+  }
+
+  .projects .project-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+  .footer__wrap {
+    gap: 72px;
+  }
+}
+
+/* ----- Desktop (≥1158px) tweaks ----- */
+@media (min-width: 1158px) {
+  .container {
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .contacts {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .benefits__iconbox {
+    display: flex;
+  }
+}

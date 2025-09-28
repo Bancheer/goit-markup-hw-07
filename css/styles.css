@@ -1419,3 +1419,115 @@ body.no-scroll {
   display: inline-block;
   color: #2e2f42;
 }
+
+/* ===== Mobile Header / Top Line ===== */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .nav__list,
+  .contacts {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(46, 47, 66, 0.12);
+    border-radius: 4px;
+    background: transparent;
+  }
+  .menu-icon {
+    display: inline-block;
+    color: #2e2f42;
+  }
+}
+
+/* Оверлей меню */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #fff;
+  padding: 80px 24px 40px;
+  flex-direction: column;
+  gap: 40px;
+}
+.mobile-menu.is-open {
+  display: flex;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Внутри Top Line */
+.mobile-menu__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(46, 47, 66, 0.12);
+  border-radius: 50%;
+  background: #fff;
+}
+.mobile-menu__nav .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.mobile-menu__nav .menu-link {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+.mobile-menu__nav .menu-link[aria-current="page"] {
+  color: #404bbf;
+}
+
+.address .address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.address-link {
+  font-size: 20px;
+  color: #434455;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+.social__link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #4d5ae5;
+  color: #fff;
+}
+.social__link:focus,
+.social__link:hover {
+  background: #404bbf;
+}
+
+/* What Are We Doing скрыть на <1158px, как в макете */
+.doing {
+  display: none;
+}
+@media (min-width: 1158px) {
+  .doing {
+    display: block;
+  }
+}

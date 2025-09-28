@@ -23,16 +23,20 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- ======================= HEADER ======================= -->
     <header class="header">
       <div class="container header__wrap">
-        <a class="logo link" href="./index.html"><span>WEB</span>STUDIO</a>
+        <!-- ЛОГО -->
+        <a class="logo link" href="./index.html">
+          <span class="logo-accent">WEB</span> STUDIO
+        </a>
 
-        <nav class="nav" aria-label="Primary">
+        <!-- ДЕСКТОП-НАВИГАЦИЯ -->
+        <nav class="nav">
           <ul class="nav__list list">
             <li>
               <a
-                class="nav__link link current"
+                class="nav__link current link"
                 href="./index.html"
                 aria-current="page"
                 >Studio</a
@@ -45,33 +49,106 @@
           </ul>
         </nav>
 
-        <ul class="contacts list">
-          <li>
-            <a class="contacts__link link" href="mailto:info@devstudio.com"
-              >info@devstudio.com</a
-            >
-          </li>
-          <li>
-            <a class="contacts__link link" href="tel:+110001111111"
-              >+11 (000) 111-11-11</a
-            >
-          </li>
-        </ul>
+        <!-- ДЕСКТОП-КОНТАКТЫ -->
+        <address class="contacts">
+          <a class="contacts__link link" href="mailto:info@devstudio.com"
+            >info@devstudio.com</a
+          >
+          <a class="contacts__link link" href="tel:+110001111111"
+            >+11 (000) 111-11-11</a
+          >
+        </address>
 
-        <!-- ADD: Burger button (mobile only) -->
+        <!-- КНОПКА-БУРГЕР (SVG) -->
         <button
-          class="burger"
-          id="burger"
-          aria-label="Open menu"
+          class="menu-toggle"
+          type="button"
           aria-expanded="false"
           aria-controls="mobile-menu"
+          aria-label="Open menu"
         >
-          <span class="burger__bar" aria-hidden="true"></span>
-          <span class="visually-hidden">Menu</span>
+          <!-- иконка «открыть» -->
+          <svg
+            class="menu-icon"
+            width="24"
+            height="24"
+            data-icon="open"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <use href="./images/icons.svg#icon-menu"></use>
+          </svg>
+          <!-- иконка «закрыть» -->
+          <svg
+            class="menu-icon"
+            width="24"
+            height="24"
+            data-icon="close"
+            aria-hidden="true"
+            focusable="false"
+            hidden
+          >
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
         </button>
       </div>
-    </header>
 
+      <!-- МОБИЛЬНОЕ МЕНЮ (оверлей на весь экран) -->
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <button
+          class="mobile-menu__close"
+          type="button"
+          aria-label="Close menu"
+        >
+          <svg
+            class="menu-icon"
+            width="24"
+            height="24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <nav class="mobile-menu__nav">
+          <ul class="menu">
+            <li>
+              <a class="menu-link" href="./index.html" aria-current="page"
+                >Studio</a
+              >
+            </li>
+            <li><a class="menu-link" href="./portfolio.html">Portfolio</a></li>
+            <li><a class="menu-link" href="#contacts">Contacts</a></li>
+          </ul>
+        </nav>
+
+        <address class="address">
+          <ul class="address-list">
+            <li>
+              <a class="address-link" href="tel:+110001111111"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+            <li>
+              <a class="address-link" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+          </ul>
+        </address>
+
+        <ul class="socials">
+          <li>
+            <a class="social__link" href="#" aria-label="Instagram">IG</a>
+          </li>
+          <li><a class="social__link" href="#" aria-label="Twitter">TW</a></li>
+          <li><a class="social__link" href="#" aria-label="Facebook">FB</a></li>
+          <li><a class="social__link" href="#" aria-label="LinkedIn">IN</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- ===================== /HEADER ======================== -->
     <!-- ADD: Mobile menu overlay -->
     <div class="mmenu" id="mobile-menu" hidden>
       <div
@@ -687,5 +764,6 @@
         });
       });
     </script>
+    <script src="./js/mobile-menu.js" defer></script>
   </body>
 </html>
